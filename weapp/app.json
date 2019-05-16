@@ -1,0 +1,19 @@
+{
+    "pages": [
+        "pages/index/index"
+    ],
+    "window": {
+        "navigationStyle": "custom",
+        "backgroundTextStyle": "dark",
+        "backgroundColor": "#efefef",
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTitleText": "TouchUI",
+        "navigationBarTextStyle": "black"
+    },
+    "networkTimeout": {
+        "request": 10000
+    },
+    "theme": {
+        "theme-color": "#3399ff"
+    }
+}

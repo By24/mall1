@@ -3,7 +3,7 @@ import crypto from 'crypto'
 
 export default class BaseComponent {
 	constructor() {
-		this.idList = ['user_id', 'mall_id', 'freight_id', 'member_id'];
+		this.idList = ['memberId', 'configId', 'goodsId', 'catId'];
 	}
 	//获取id列表
 	async getId(type) {

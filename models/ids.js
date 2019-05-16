@@ -3,17 +3,21 @@
 import mongoose from 'mongoose'
 
 const idsSchema = new mongoose.Schema({
-	user_id: Number,
-	mall_id: Number
+	memberId: Number,
+	configId: Number,
+	goodsId: Number,
+	catId: Number
 });
 
-const Ids = mongoose.model('ff__Ids', idsSchema);
+const Ids = mongoose.model('ff__ids', idsSchema);
 
 Ids.findOne((err, data) => {
 	if (!data) {
 		const newIds = new Ids({
-			user_id: 0,
-			mall_id: 0
+			userId: 0,
+			configId: 0,
+			goodsId: 0,
+			catId: 0
 		});
 		newIds.save();
 	}
