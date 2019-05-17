@@ -1,8 +1,4 @@
-// var _StyleHelper = require('../../libs/StyleHelper.js');
-
-// var _StyleHelper2 = _interopRequireDefault(_StyleHelper);
-
-// function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+import _StyleHelper from '../../static/libs/StyleHelper';
 Component({
     behaviors: [],
     properties: {
@@ -14,9 +10,10 @@ Component({
         }
     },
     options: {
+        addGlobalClass: true, // 使用外部css
         multipleSlots: true
     },
-    data: function () {
+    data: function() {
         statusBarHeight: ""
     },
     ready: function ready() {
@@ -26,7 +23,8 @@ Component({
         style.paddingTop = wx.STATUS_BAR_HEIGHT;
         this.setData({
             statusBarHeight: wx.STATUS_BAR_HEIGHT,
-            // selfCustomStyle: _StyleHelper2.default.getPlainStyle(style)
+            selfCustomStyle: _StyleHelper.getPlainStyle(style),
+            NAV_HEIGHT: wx.STATUS_BAR_HEIGHT + wx.DEFAULT_HEADER_HEIGHT + 'px'
         });
     }
 });

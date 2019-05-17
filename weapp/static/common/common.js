@@ -1,27 +1,12 @@
 "use strict";
 
-import MD5Util from '../utils/MD5Encode'
-
 const app = getApp();
 
 
 // 跳转到登陆
 function jumpToLogin(callback) {
-    let ext = {
-        js_code: '',
-        key: MD5Util.hexMD5('eshare'),
-        preview: false,
-        weapp_id: wx.$ext.weAppId,
-    }
-    wx.login({
-        success(res) {
-            if (res.code) {
-                ext.js_code = res.code
-                wx.$api.login(ext, (res) => {
-                    setStorage('token', res.data.token)
-                })
-            }
-        }
+    wx.navigateTo({
+        url: '/pages/login/login',
     })
 }
 
@@ -43,5 +28,6 @@ function setStorage(name, content) {
 
 export default {
     getStorage: getStorage,
+    setStorage: setStorage,
     jumpToLogin: jumpToLogin
 }

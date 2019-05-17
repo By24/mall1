@@ -23,7 +23,7 @@ const sysConfigSchema = new Schema({
 
 sysConfigSchema.index({ id: 1 });
 
-const sysConfig = mongoose.model('ff__sys_configs', sysConfigSchema);
+const sysConfig = mongoose.model('ff__sys_config', sysConfigSchema);
 
 
 export default sysConfig

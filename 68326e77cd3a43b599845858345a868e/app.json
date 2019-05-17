@@ -1,0 +1,16 @@
+{
+  "pages":[
+    "pages/ui/login/login",
+	"pages/ui/main/main",
+	"pages/ui/add/add",
+	"pages/ui/search/search",
+	"pages/ui/webView/webView"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black",
+	"navigationStyle": "custom"
+  }
+}

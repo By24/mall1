@@ -9,9 +9,11 @@ App({
         key:'eshare'
     },
     onLaunch: function onLaunch() { 
-        common.jumpToLogin()
-        wx.$api.goodCates({},)
+        
     },
     onShow: function onShow() {},
-    onHide: function onHide() {}
+    onHide: function onHide() {},
+    onError: function (e){
+        console.log('onError',e)
+    },
 });

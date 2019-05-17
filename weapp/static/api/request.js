@@ -3,6 +3,7 @@
 import BaseComponent from '../prototype/baseComponent';
 import common from '../common/common';
 
+// 不需要tokeng的接口
 const ckeckUrl =  ['weapp/gettoken']
 
 class Request extends BaseComponent {
@@ -27,7 +28,6 @@ class Request extends BaseComponent {
             }
         }
 
-        console.log(userToken)
         let config = {
             token: userToken,
             version: ''
@@ -45,7 +45,7 @@ class Request extends BaseComponent {
     sendRequest(method, apiUrl, data, config = {}, callback ){
         let _this = this;
         wx.request({
-            url: this.baseUrl  + apiUrl,
+            url: this.baseUrl + apiUrl,
             data: data,
             method: method,
             header: {
@@ -53,15 +53,16 @@ class Request extends BaseComponent {
                 "token": config.token,
                 "version": config.version
             },
-            success: function (res){
+            success: function (res) {
                 let data = res.data
                 _this.statusCode(data, callback)
             },
-            fail: function(err) {  
+            fail: function (err) {
                 console.log(err);
             }
         })
     }
+    
     // 状态码处理
     statusCode(data, callback){
         switch (data.code) {

@@ -1,0 +1,8 @@
+<view class='ui-list-view' capture-bind:touchstart='touchStart' capture-bind:touchmove='touchMove' capture-catch:touchend='touchEnd'>
+
+
+
+
+
+
+</view>
