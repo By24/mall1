@@ -1,41 +1,48 @@
 <nav-bar custom-style="{{ {borderBottom:'1px solid rgba(231, 231, 231, 0.6)',backgroundColor:'#fff'} }}" title="xxx">
 </nav-bar>
+ Goods details
+ "pages/index/index",
+<view catchtouchmove="handleTouchMove">
+    <ui-tabs index="{{ current11 }}" probe="1" bounce="{{false}}" bindchange="handleChange11">
+        <ui-tab>选项卡一</ui-tab>
+        <ui-tab>选项卡二</ui-tab>
+        <ui-tab>选项卡三</ui-tab>
+        <ui-tab>选项卡四</ui-tab>
+        <ui-tab>选项卡五</ui-tab>
+        <ui-tab>选项卡六</ui-tab>
+        <ui-tab>选项卡七</ui-tab>
+        <ui-tab>选项卡八</ui-tab>
+    </ui-tabs>  
 
-<ui-tabs index="{{ current11 }}" probe="1" bounce="{{false}}" bindchange="handleChange11">
-    <ui-tab>选项卡一</ui-tab>
-    <ui-tab>选项卡二</ui-tab>
-    <ui-tab>选项卡三</ui-tab>
-    <ui-tab>选项卡四</ui-tab>
-    <ui-tab>选项卡五</ui-tab>
-    <ui-tab>选项卡六</ui-tab>
-    <ui-tab>选项卡七</ui-tab>
-    <ui-tab>选项卡八</ui-tab>
-</ui-tabs>  
+    <swiper class="content" current="{{ current11 }}" style='height:500px' bindchange="handleContentChange11">
+        <swiper-item>
 
-<scroll-view></scroll-view>
-<swiper class="content" current="{{ current11 }}" bindchange="handleContentChange11">
-    <swiper-item>
-        <list-view></list-view>
-    </swiper-item>
-    <swiper-item>
-        内容二
-    </swiper-item>
-    <swiper-item>
-        内容三
-    </swiper-item>
-    <swiper-item>
-        内容四
-    </swiper-item>
-    <swiper-item>
-        内容五
-    </swiper-item>
-    <swiper-item>
-        内容六
-    </swiper-item>
-    <swiper-item>
-        内容七
-    </swiper-item>
-    <swiper-item>
-        内容八
-    </swiper-item>
-</swiper>
+            <list-view custom-style="{{ {height:'500px'} }}" length='{{100}}' noMore='{{true}}' bind:onRefresh='onRefresh' bind:onLoadMore='onLoadMore'>
+                <view wx:for="{{100}}" wx:key="{{index}}">{{item}}</view>
+            
+            </list-view>
+        </swiper-item>
+        <swiper-item>
+            内容二
+        </swiper-item>
+        <swiper-item>
+            内容三
+        </swiper-item>
+        <swiper-item>
+            内容四
+        </swiper-item>
+        <swiper-item>
+            内容五
+        </swiper-item>
+        <swiper-item>
+            内容六
+        </swiper-item>
+        <swiper-item>
+            内容七
+        </swiper-item>
+        <swiper-item>
+            内容八
+        </swiper-item>
+    </swiper>
+
+</view>

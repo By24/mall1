@@ -14,7 +14,7 @@ Page({
     onLoad: function (options) {
 
     },
-
+    handleTouchMove:function (){},
     handleChange11: function handleChange11(e) {
         var index = e.detail.index;
         this.setData({
@@ -26,6 +26,12 @@ Page({
         this.setData({
             current11: current
         });
+    },
+    onRefresh: function (e){
+        console.log('onRefresh', e)
+    },
+    onLoadMore: function (){
+        console.log('onLoadMore',e)
     },
     /**
      * 生命周期函数--监听页面初次渲染完成
