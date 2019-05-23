@@ -11,7 +11,8 @@ module.exports = {
 		    secure:   false,
 		    maxAge:  365 * 24 * 60 * 60 * 1000,
 		}
-	}
+	},
+	jwtsecret:'jjjjjj'
 }
 
 // db.createUser({user:'root',pwd :'root',roles: [{role:'userAdminAnyDatabase',db:'admin'},'readWriteAnyDatabase']})

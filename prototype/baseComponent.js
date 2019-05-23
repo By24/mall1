@@ -1,6 +1,7 @@
-import Ids from '../models/ids'
 import crypto from 'crypto'
-
+import jwt from 'jsonwebtoken'
+import config from '../config'
+import Ids from '../models/ids'
 export default class BaseComponent {
 	constructor() {
 		this.idList = ['memberId', 'configId', 'goodsId', 'catId'];
@@ -30,4 +31,16 @@ export default class BaseComponent {
 		const md5 = crypto.createHash('md5');
 		return md5.update(password).digest('base64');
 	}
+	signtoken(obj){
+		return jwt.sign(obj, config.jwtsecret)
+	}
+	verifytoken(token){
+		jwt.verify(token, config.jwtsecret,function (err, decoded){
+			if(err){
+				return '无效的token.'
+			}
+			return decoded 
+		})
+	}
 }
+

@@ -5,7 +5,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-        current11: 0,
+       
     },
 
     /**
@@ -15,18 +15,6 @@ Page({
 
     },
 
-    handleChange11: function handleChange11(e) {
-        var index = e.detail.index;
-        this.setData({
-            current11: index
-        });
-    },
-    handleContentChange11: function handleContentChange11(e) {
-        var current = e.detail.current;
-        this.setData({
-            current11: current
-        });
-    },
     /**
      * 生命周期函数--监听页面初次渲染完成
      */

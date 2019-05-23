@@ -6,7 +6,7 @@ const Schema = mongoose.Schema;
 
 const memberSchema = new Schema({
     memberId: Number,
-
+    
 })
 
 memberSchema.index({ id: 1 });

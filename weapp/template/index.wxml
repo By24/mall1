@@ -1,0 +1,53 @@
+<!-- 搜索框 -->
+<template name="search">
+    <view class="ui-row ui-search">
+        <view class="ui-col valign-middle input">
+            <view class="ui-col-content valign-middle" style="flex:0 0 20px;">
+                <icon type="search" size="16"></icon>
+            </view>
+            <view class="ui-col-content valign-middle">
+                <input type="text" class='radius'></input>
+            </view>
+        </view>
+        <view class="ui-col align-right valign-middle" style="flex:0 0 40px;">
+            搜索
+        </view>
+    </view>
+</template>
+
+<!-- 图标导航 -->
+<template name="iconNav">
+    <view class="ui-row icon-nav">
+        <view class="ui-col-3">
+            <view class="ui-col-content valign-middle align-center">
+                <image src="http://wxmiimage.esharex.com/m_68/shop/15502138036022.jpeg"></image>
+                <text>服饰</text>
+            </view>
+        </view>
+        <view class="ui-col-3">
+            <view class="ui-col-content valign-middle align-center">
+                <image src="http://wxmiimage.esharex.com/m_68/shop/15502138036022.jpeg"></image>
+                <text>服饰</text>
+            </view>
+        </view>
+        <view class="ui-col-3">
+            <view class="ui-col-content valign-middle align-center">
+                <image src="http://wxmiimage.esharex.com/m_68/shop/15502138036022.jpeg"></image>
+                <text>服饰</text>
+            </view>
+        </view>
+        <view class="ui-col-3">
+            <view class="ui-col-content valign-middle align-center">
+                <image src="http://wxmiimage.esharex.com/m_68/shop/15502138036022.jpeg"></image>
+                <text>服饰</text>
+            </view>
+        </view>
+        <view class="ui-col-3">
+            <view class="ui-col-content valign-middle align-center">
+                <image src="http://wxmiimage.esharex.com/m_68/shop/15502138036022.jpeg"></image>
+                <text>服饰</text>
+            </view>
+        </view>
+    </view>
+    <view class="ui-clear"></view>
+</template>

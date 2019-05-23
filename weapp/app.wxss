@@ -19,6 +19,8 @@
 /* 水平垂直居中 */
 /* 超出部分出省略号 */
 /* 多行文本超出部分省略号 */
+@import "/template/index.wxss";
+
 view {
   box-sizing: border-box;
   margin: 0;
@@ -312,6 +314,9 @@ button[type="success"][plain] {
   float: left;
   height: 100%;
   width: 8.33333333%;
+}
+.ui-clear{
+    clear: both;
 }
 @font-face {
   font-family: 'ui-icon';

@@ -8,6 +8,7 @@ class Admin extends baseComponent {
 	constructor() {
 		super()
 		this.register = this.register.bind(this)
+		this.login = this.login.bind(this)
 	}
 	async register(req, res, next) {
 		const form = new formidable.IncomingForm();
@@ -73,6 +74,14 @@ class Admin extends baseComponent {
 				})
 				return
 			}
+		})
+	}
+	async login(req, res, next) {
+		const form = new formidable.IncomingForm();
+		form.parse(req, async (err, fields, files) => {
+			let token = this.signtoken(132)
+			let checkToken = this.verifytoken(token) || 1322
+			res.send({token,checkToken})
 		})
 	}
 }
