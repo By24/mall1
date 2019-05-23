@@ -14,7 +14,7 @@
         <swiper-item class='swiperItem' wx:for='{{navBarTitle}}' wx:key='index'>
             <listView class='listView' length='{{data[index].data.length}}' noMore='{{data[index].currentPage >= data[index].totalPage}}' bind:onRefresh='onRefresh' bind:onLoadMore='onLoadMore'>
                 <view class='listView_item' wx:for='{{data[index].data}}' wx:key='dataIndex' wx:for-item='dataItem' bindtap='clickItem' data-url='{{dataItem.url}}'>
-                    <view class='title'>{{dataItem.desc}}</view>
+                     <view class='title'>{{dataItem.desc}}</view>
                     <scroll-view class='imgView' scroll-x>
                         <image class='imgItem' src='{{imageItem}}' wx:for='{{dataItem.images}}' wx:key='imageIndex' wx:for-item='imageItem' catchtap='clickPreImage' data-images='{{dataItem.images}}' data-currentsrc='{{imageItem}}'></image>
                     </scroll-view>

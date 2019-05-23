@@ -11,8 +11,8 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.0.9",
-	"appid": "touristappid",
+	"libVersion": "2.7.0",
+	"appid": "wx40d6f76733e579f7",
 	"projectname": "%E6%B5%8B%E8%AF%95",
 	"isGameTourist": false,
 	"condition": {

@@ -1040,3 +1040,20 @@ image {
 .content_list .grey-bg {
   background-color: #f5f5f5;
 }
+.font-24{
+    font-size: 24rpx;
+}
+
+.font-30{
+    font-size: 30rpx
+}
+
+.bg-red{
+    color: #fff;
+    background: #FF3B44;
+}
+
+.bg-yellow{
+    color: #fff;
+    background: #FFAA33
+}

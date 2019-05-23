@@ -54,7 +54,7 @@ Component({
         EVENT_REFRESH: 'onRefresh',
         EVENT_LOADMORE: 'onLoadMore',
         rotateAngle: 0,
-        scrollY: true,//默认true
+        scrollY: true, //默认true
         state: 0, //控件的状态 0:无状态 1:下拉中 2:下拉达到刷新条件 3:下拉刷新中 4:上拉中 5:上拉加载中 6:加载失败
         scrollToTop: true, //是否到顶部了
         scrollToBottom: false, //是否到底部了
@@ -63,20 +63,21 @@ Component({
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
-    ready: function () {
+    ready: function() {
         var that = this;
-        util.queryView(this, '.listView_box_header', function (res) {
-			var scale = 80 / res.height;
-			that.data.scale = scale;
+        util.queryView(this, '.listView_box_header', function(res) {
+            var scale = 80 / res.height;
+            that.data.scale = scale;
             that.data.headHeight = res.height * scale;
             that.data.headHeightDef = res.height * scale;
         });
 
-        util.queryView(this, '.listView_box', function (res) {
+        util.queryView(this, '.listView_box', function(res) {
             that.setData({
                 bottom: res.bottom,
             })
         });
+        console.log(that.data)
     },
 
     /**
@@ -86,7 +87,7 @@ Component({
         /**
          * 滚动事件
          */
-        scrollListener: function (e) {
+        scrollListener: function(e) {
             if (e.detail.scrollTop == 0) {
                 //到顶部了
                 this.data.scrollToTop = true;
@@ -98,20 +99,20 @@ Component({
         /**
          * 滚动到顶部
          */
-        scrollTopListener: function (e) {
+        scrollTopListener: function(e) {
             this.data.scrollToTop = true;
             this.data.scrollToBottom = false;
         },
         /**
          * 滚动到底部
          */
-        scrollBottomListener: function (e) {
+        scrollBottomListener: function(e) {
             //加载更多
-            if (this.data.state != 3
-                && this.data.state != 5
-                && this.data.length != null && this.data.length > 0
-                && this.data.loadMore
-                && !this.data.noMore) {
+            if (this.data.state != 3 &&
+                this.data.state != 5 &&
+                this.data.length != null && this.data.length > 0 &&
+                this.data.loadMore &&
+                !this.data.noMore) {
                 console.log('触发加载更多')
                 this.data.scrollToTop = false;
                 this.data.scrollToBottom = true;
@@ -124,16 +125,16 @@ Component({
         /**
          * 手指点击
          */
-        touchStart: function (e) {
+        touchStart: function(e) {
             this.data.touchStartY = e.touches[0].pageY;
             console.log('touchStart' + this.data.touchStartY);
-            this.triggerEvent('bindScrollTouchStart');
+            // this.triggerEvent('bindScrollTouchStart');
         },
         /**
          * 手指滑动
          */
-        touchMove: function (e) {
-			var that  = this;
+        touchMove: function(e) {
+            var that = this;
             //1.计算出下拉的间距
             var dropDownInterval = (e.touches[0].pageY - this.data.touchStartY);
             this.data.rotateAngle = dropDownInterval * that.data.scale / this.data.headHeightDef * 90;
@@ -142,11 +143,11 @@ Component({
             }
 
             //2.下拉时
-            if (dropDownInterval > 0
-                && this.data.scrollToTop
-                && this.data.state != 3
-                && this.data.state != 5
-                && this.data.refresh) {
+            if (dropDownInterval > 0 &&
+                this.data.scrollToTop &&
+                this.data.state != 3 &&
+                this.data.state != 5 &&
+                this.data.refresh) {
                 this.setData({
                     scrollY: false,
                 })
@@ -172,10 +173,10 @@ Component({
                     }
                 } else {
                     //3.当是下拉
-                    this.data.state = 1;//下拉中
+                    this.data.state = 1; //下拉中
                 }
             } else if (this.data.state != 3 && this.data.state != 5) {
-                this.data.state = 4;//上拉中
+                this.data.state = 4; //上拉中
             }
 
             this.setData(this.data);
@@ -183,7 +184,7 @@ Component({
         /**
          * 手指松开
          */
-        touchEnd: function (e) {
+        touchEnd: function(e) {
             this.setData({
                 scrollY: true,
             })
@@ -199,7 +200,7 @@ Component({
             }
         },
         //重置状态
-        resetState: function () {
+        resetState: function() {
             console.log('重置状态')
             //重置状态
             this.data.state = 0;
@@ -208,17 +209,17 @@ Component({
             this.setData(this.data);
         },
         //动态改变scroll-y的值 防止下拉时触发scroll-view的阻尼效果
-        setScrollY: function (state) {
+        setScrollY: function(state) {
             this.data.scrollY = state;
             this.setData({
                 scrollY: this.data.scrollY,
             })
         },
         //发送事件
-        sendEvent: function (eventType) {
+        sendEvent: function(eventType) {
             var that = this;
             this.triggerEvent(eventType, {
-                success: function () {
+                success: function() {
                     if (eventType == that.data.EVENT_REFRESH && that.data.state == 3) {
                         that.data.scrollToTop = true;
                         that.data.scrollToBottom = false;
@@ -229,10 +230,10 @@ Component({
                     }
                     that.resetState();
                 },
-                fail: function () {
+                fail: function() {
                     that.data.state = 6;
                     that.setData(that.data);
-                    setTimeout(function () {
+                    setTimeout(function() {
                         if (eventType == that.data.EVENT_REFRESH && that.data.state == 3) {
                             that.data.scrollToTop = true;
                             that.data.scrollToBottom = false;

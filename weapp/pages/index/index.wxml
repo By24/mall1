@@ -2,6 +2,19 @@
 
 <nav-bar custom-style="{{ {borderBottom:'1px solid rgba(231, 231, 231, 0.6)',backgroundColor:'#fff'} }}" title="xxx">
 </nav-bar>
+ Goods details
+ "pages/index/index",
+<view catchtouchmove="handleTouchMove">
+    <ui-tabs index="{{ current11 }}" probe="1" bounce="{{false}}" bindchange="handleChange11">
+        <ui-tab>选项卡一</ui-tab>
+        <ui-tab>选项卡二</ui-tab>
+        <ui-tab>选项卡三</ui-tab>
+        <ui-tab>选项卡四</ui-tab>
+        <ui-tab>选项卡五</ui-tab>
+        <ui-tab>选项卡六</ui-tab>
+        <ui-tab>选项卡七</ui-tab>
+        <ui-tab>选项卡八</ui-tab>
+    </ui-tabs>  
 
 <template is='search'  />
 
