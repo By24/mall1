@@ -14,29 +14,6 @@ Page({
     onLoad: function (options) {
 
     },
-<<<<<<< HEAD
-
-=======
-    handleTouchMove:function (){},
-    handleChange11: function handleChange11(e) {
-        var index = e.detail.index;
-        this.setData({
-            current11: index
-        });
-    },
-    handleContentChange11: function handleContentChange11(e) {
-        var current = e.detail.current;
-        this.setData({
-            current11: current
-        });
-    },
-    onRefresh: function (e){
-        console.log('onRefresh', e)
-    },
-    onLoadMore: function (){
-        console.log('onLoadMore',e)
-    },
->>>>>>> aa9f959efe8a805a48d2f4de545a0d6609b881b6
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
