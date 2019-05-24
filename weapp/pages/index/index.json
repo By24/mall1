@@ -1,8 +1,9 @@
 {
+    "enablePullDownRefresh": true,
     "usingComponents": {
         "nav-bar": "/components/nav-bar/index",
         "ui-tabs": "/components//ui-tabs/index",
         "ui-tab": "/components//ui-tab/index",
-        "list-view": "/components/list-view/index"
+         "ui-fixed-view": "/components/ui-fixed-view/index"
     }
 }

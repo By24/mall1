@@ -1,7 +1,0 @@
-<view class="list-view"
-    style="{{ selfCustomStyle }}"
-    capture-bind:touchstart='touchStart'
-    capture-bind:touchmove='touchMove'
-    capture-catch:touchend='touchEnd'>
-sadf
-</view>
